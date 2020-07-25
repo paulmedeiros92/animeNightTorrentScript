@@ -28,5 +28,5 @@ f = open("torrents.txt", "w+")
 f.write(contents)
 f.close()
 
-subprocess.call(r'"C:\Users\Abacaxi\Desktop\Python Scripts\animeNight\aria2\aria2c.exe" -i "C:\Users\Abacaxi\Desktop\Python Scripts\animeNight\torrents.txt"')
+subprocess.call(r'aria2\aria2c.exe -i torrents.txt')
 
