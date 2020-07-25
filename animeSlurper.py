@@ -2,6 +2,8 @@ import feedparser
 import subprocess
 from sqlite import get_all_shows
 
+OUTPATH = r"C:\Users\Abacaxi\Desktop\anime"
+
 shows = get_all_shows()
 
 # search anime through the feed
@@ -22,7 +24,7 @@ for show in [n for n in shows if n[1] != "Chobits"]:
 print("Writing torrents to file...")
 contents = ''
 for show in picks:
-  contents += show.link + "\n\tdir=C:\\Users\\Abacaxi\\Desktop\\anime\n\tseed-time=1\n"
+  contents += show.link + "\n\tdir=" + OUTPATH + "\n\tseed-time=1\n"
 
 f = open("torrents.txt", "w+")
 f.write(contents)

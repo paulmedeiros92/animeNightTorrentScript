@@ -2,6 +2,7 @@ import sqlite3
 from sqlite3 import Error
 
 # read from sqlite database and collect anime name and episode / season
+DATABASEPATH = r"C:\Users\Abacaxi\Desktop\Bots\AnimeNightDB\AnimeNightDB.db"
 
 def create_connection(db_file):
   conn = None
@@ -17,8 +18,7 @@ def select_all_shows(conn):
   return cur.fetchall()
 
 def get_all_shows():
-  database = r"C:\Users\Abacaxi\Desktop\Bots\AnimeNightDB\AnimeNightDB.db"
   print("Connecting to database...")
-  conn = create_connection(database)
+  conn = create_connection(DATABASEPATH)
   print("Selecting all shows..")
   return select_all_shows(conn)
