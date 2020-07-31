@@ -9,7 +9,7 @@ shows = get_all_shows()
 # search anime through the feed
 picks = []
 print("Searching Nyaa.si")
-for show in [n for n in shows if n[1] != "Chobits"]:
+for show in [n for n in shows if not (n[1] == "Chobits" or n[1] == "Mystery Show")]:
   title = show[1].replace(' ', '+')
   episode = str(show[4]) if show[4] > 9 else '0' + str(show[4]) 
   text = title + "+" + episode
